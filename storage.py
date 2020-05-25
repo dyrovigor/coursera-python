@@ -8,7 +8,6 @@ def read_json_from_file(file_path):
     with open(file_path, 'r') as f:
         try:
             dump = json.load(f)
-            f.close()
             return dump
         except json.decoder.JSONDecodeError:
             return {}
