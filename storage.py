@@ -16,7 +16,6 @@ def read_json_from_file(file_path):
 def write_json_to_file(file_path, data):
     with open(file_path, "w") as f:
         f.write(json.dumps(data, ensure_ascii=False))
-        f.close()
 
 
 if __name__ == '__main__':
@@ -42,5 +41,5 @@ if __name__ == '__main__':
     if value is None:
         print(value_from_dict)
     else:
-        data_to_save[key] = value if value_from_dict is None else '{}, {}'.format(value_from_dict, value)
+        data_to_save[key] = value if value_from_dict is None else f'{value_from_dict}, {value}'
         write_json_to_file(storage_path, data_to_save)
